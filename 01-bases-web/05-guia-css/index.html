@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de ejercicios CSS</title>
+
+    <!-- 7. Google Fonts: Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- 1. CSS externo -->
+    <link rel="stylesheet" href="mis-estilos.css">
+</head>
+<body>
+
+    <header>
+        <!-- 2. h1 en rojo -->
+        <h1>Guía de ejercicios CSS</h1>
+
+        <!-- 5. lista sin viñetas dentro del nav -->
+        <nav>
+            <ul>
+                <li><a href="#clases">Clases</a></li>
+                <li><a href="#texto">Texto</a></li>
+                <li><a href="#unidades">Unidades</a></li>
+                <li><a href="#herencia">Herencia</a></li>
+                <li><a href="#parallax">Parallax</a></li>
+                <li><a href="#lectura">Lectura</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="clases">
+            <h2>Clases</h2>
+            <!-- 3. clase .texto-azul -->
+            <p class="texto-azul">Este párrafo usa la clase texto-azul.</p>
+            <p>Este otro no la tiene, así que queda con el color de siempre.</p>
+        </section>
+
+        <section id="texto">
+            <h2>Decoración de texto</h2>
+            <!-- 4. links sin subrayado y un texto tachado -->
+            <p>Los <a href="https://developer.mozilla.org/es/docs/Web/CSS/text-decoration">links</a> de esta página no tienen subrayado.</p>
+            <p>Precio: <span class="tachado">$12.000</span> $9.500</p>
+        </section>
+
+        <section id="unidades">
+            <!-- 8. este h2 mide 30px: 3em sobre los 10px de la raíz -->
+            <h2>Unidades em</h2>
+            <p>La raíz está en 62.5%, o sea 10px. Los h2 tienen 3em, que son 30px.</p>
+        </section>
+
+        <section id="debugging">
+            <h2>Debugging</h2>
+            <!-- 9. las reglas corregidas están en mis-estilos.css -->
+            <p class="titulo-principal">Título con el selector corregido</p>
+            <div class="caja">Caja con el padding corregido</div>
+        </section>
+
+        <section id="herencia">
+            <h2>Herencia</h2>
+            <!-- 10. el borde del padre no se hereda, el color sí -->
+            <div class="caja-padre">
+                Soy el padre: tengo color verde y borde.
+                <p class="caja-hija">Soy el hijo: heredo el color pero no el borde.</p>
+                <p class="caja-hija hereda-borde">Soy el hijo con border: inherit, así que copio el borde del padre.</p>
+                <button type="button">Botón sin font: inherit</button>
+                <button type="button" class="boton-heredado">Botón con font: inherit</button>
+            </div>
+        </section>
+
+        <!-- 11. parallax con background-attachment: fixed -->
+        <section id="parallax" class="parallax">
+            <p>El fondo de esta sección se queda quieto cuando hacés scroll.</p>
+        </section>
+
+        <section id="lectura">
+            <h2>Texto largo</h2>
+            <!-- 12. line-height y text-align para leer cómodo -->
+            <p class="texto-largo">
+                Cuando un texto es largo, lo que más ayuda a leerlo en pantalla es darle aire entre
+                líneas y no hacer los renglones demasiado anchos. Por eso este párrafo tiene un
+                line-height de 1.6, está alineado a la izquierda y tiene un ancho máximo de unos 65
+                caracteres. Si lo justificara, el navegador estiraría los espacios entre palabras para
+                llenar cada línea y quedarían huecos desparejos que cortan la lectura.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Milena Previgliano · Programación III</p>
+    </footer>
+
+</body>
+</html>

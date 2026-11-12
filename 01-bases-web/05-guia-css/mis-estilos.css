@@ -1,0 +1,193 @@
+/* Guía de ejercicios CSS - Programación III
+   Las respuestas de los ejercicios con IA (9 a 12) están como comentarios al lado de cada regla. */
+
+
+/* 8. Unidades em: la raíz en 62.5% = 10px (16px x 0.625) */
+html {
+    font-size: 62.5%;
+}
+
+/* 6. Fondo con imagen que no se repite */
+/* 7. Roboto (el link está en el head del HTML) */
+body {
+    margin: 0;
+    background-color: #f4f1ec;
+    background-image: url("fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    font-family: "Roboto", Arial, sans-serif;
+    color: #2d2d2d;
+}
+
+/* no le pongo font-size al body para que los h2 sigan midiendo 30px:
+   si el body tuviera 1.6rem, 3em serían 48px. El texto lo agrando acá */
+p, li, button, .caja {
+    font-size: 1.6rem;
+}
+
+header, main, footer {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 0.8rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+/* 2. Todos los h1 en rojo */
+h1 {
+    color: red;
+    font-size: 4rem;
+}
+
+/* 8. 3em x 10px de la raíz = 30px */
+h2 {
+    font-size: 3em;
+    margin-top: 0;
+}
+
+
+/* 3. Clase texto-azul */
+.texto-azul {
+    color: blue;
+}
+
+
+/* 4. Links sin subrayado */
+a {
+    text-decoration: none;
+    color: #46695f;
+}
+
+/* 4. Texto tachado */
+.tachado {
+    text-decoration: line-through;
+}
+
+
+/* 5. La lista del menú sin viñetas */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    padding: 0;
+}
+
+
+/* 9. Debugging
+   Este es el código con errores que le pasé a la IA:
+
+   titulo-principal {
+       color: #46695f
+       font-weight: bold;
+   }
+   .caja {
+       background-color: #e8efe9;
+       padding 10px;
+   }
+
+   Le pedí: "Identifica los errores sintácticos en este código basándote en la sintaxis
+   estándar de CSS y explícame por qué están mal". Lo que me respondió, resumido:
+   - A "titulo-principal" le falta el punto. Sin el punto es un selector de etiqueta y busca
+     un elemento <titulo-principal>, que no existe, así que la regla no se aplica a nada.
+   - Después de "color: #46695f" falta el punto y coma. El navegador lee hasta el próximo ;
+     y toma "#46695f font-weight: bold" como un solo valor de color. Como es inválido,
+     descarta la declaración y se pierden el color y el bold.
+   - "padding 10px" no tiene los dos puntos entre la propiedad y el valor, así que esa
+     declaración se ignora.
+   Las reglas corregidas: */
+.titulo-principal {
+    color: #46695f;
+    font-weight: bold;
+}
+
+.caja {
+    background-color: #e8efe9;
+    padding: 10px;
+}
+
+
+/* 10. Herencia
+   Le pedí un ejemplo donde un hijo no herede una propiedad del padre.
+   - Las propiedades de texto (color, font-family, line-height) se heredan solas.
+     Las de caja (border, padding, margin, background) no.
+   - Por eso .caja-hija toma el verde del padre pero no su borde.
+   - Para forzar la herencia se usa el valor inherit: con border: inherit el hijo copia el
+     borde del padre.
+   - Los botones no heredan la fuente porque el navegador ya les pone una propia. Con
+     font: inherit toman la del padre.
+   - Para sobrescribir algo heredado alcanza con darle otro valor al hijo con un selector
+     propio, como hice con el margin de .caja-hija. */
+.caja-padre {
+    font-size: 1.6rem;
+    color: #2f7a4f;
+    border: 2px solid #2f7a4f;
+    padding: 1.6rem;
+}
+
+.caja-hija {
+    margin: 1rem 0;
+}
+
+.hereda-borde {
+    border: inherit;
+    padding: 1rem;
+}
+
+.boton-heredado {
+    font: inherit;
+}
+
+
+/* 11. Parallax
+   Le pregunté: "Explícame cómo funciona la propiedad background-attachment: fixed para crear
+   un efecto parallax y genérame un ejemplo mínimo funcional donde el fondo se quede quieto al
+   hacer scroll". Resumen de la respuesta:
+   - Con fixed, la imagen de fondo queda fija respecto de la ventana y no del elemento.
+   - Cuando hago scroll, la sección se mueve pero la imagen no, y parece que el contenido pasa
+     por encima del fondo. Ese efecto de profundidad es el parallax.
+   - Con background-size: cover la imagen siempre cubre toda la sección.
+   - Ojo: Safari en iPhone no lo soporta y ahí el fondo se mueve normal. */
+.parallax {
+    min-height: 32rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("fondo.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.parallax p {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1rem 2rem;
+    border-radius: 0.6rem;
+}
+
+
+/* 12. Accesibilidad textual
+   Le pregunté: "¿Qué valores de line-height y text-align se recomiendan para que un texto largo
+   sea fácil de leer en pantallas digitales según las buenas prácticas de diseño web?".
+   Resumen de la respuesta:
+   - line-height entre 1.5 y 1.6 para el texto corrido. Las pautas de accesibilidad (WCAG)
+     piden que el texto se pueda leer con al menos 1.5.
+   - text-align: left (o start). El justificado deja espacios desparejos entre palabras y es
+     más difícil de leer, sobre todo para personas con dislexia.
+   - Además conviene que la línea no pase de 60 a 75 caracteres; por eso le puse max-width. */
+.texto-largo {
+    line-height: 1.6;
+    text-align: left;
+    max-width: 65ch;
+}
+
+
+footer p {
+    color: #5b6964;
+}
