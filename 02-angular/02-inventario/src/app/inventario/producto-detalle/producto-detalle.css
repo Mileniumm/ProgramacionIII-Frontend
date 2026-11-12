@@ -1,0 +1,149 @@
+:host {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.volver {
+  justify-self: start;
+}
+
+.cabecera h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.categoria {
+  margin: 0;
+  color: var(--texto-suave);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.datos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
+  margin: 0.5rem 0 0;
+}
+
+.precio {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.stock {
+  --mat-chip-elevated-container-color: var(--ok-fondo);
+  --mat-chip-label-text-color: var(--ok);
+  --mat-chip-with-avatar-avatar-size: 1.25rem;
+  --mat-chip-label-text-weight: 600;
+}
+
+.stock mat-icon {
+  color: var(--ok);
+}
+
+.stock.bajo {
+  --mat-chip-elevated-container-color: var(--alerta-fondo);
+  --mat-chip-label-text-color: var(--alerta-texto);
+}
+
+.stock.bajo mat-icon {
+  color: var(--alerta);
+}
+
+mat-card {
+  --mat-card-outlined-container-color: var(--superficie);
+}
+
+mat-card-header {
+  padding-bottom: 0.5rem;
+}
+
+.cargando p {
+  margin: 0.5rem 0 1rem;
+}
+
+mat-card.error {
+  --mat-card-outlined-container-color: var(--alerta-fondo);
+  --mat-card-outlined-outline-color: var(--alerta);
+  color: var(--alerta-texto);
+}
+
+.fila-error {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.fila-error p {
+  margin: 0;
+  margin-right: auto;
+}
+
+/* dos columnas con grid, en celular pasa a una */
+.ficha {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.75rem 1.5rem;
+  margin: 0;
+}
+
+.ficha dt {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--texto-suave);
+  font-weight: 600;
+}
+
+.ficha dd {
+  margin: 0;
+}
+
+@media (max-width: 30rem) {
+  .ficha {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .ficha dd {
+    margin-bottom: 0.75rem;
+  }
+}
+
+table {
+  width: 100%;
+  background: transparent;
+}
+
+th.mat-mdc-header-cell {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+td.mat-mdc-cell,
+th.mat-mdc-header-cell {
+  white-space: nowrap;
+}
+
+.mat-mdc-cell.numero,
+.mat-mdc-header-cell.numero {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.chip {
+  --mat-chip-elevated-container-color: var(--alerta-fondo);
+  --mat-chip-label-text-color: var(--alerta-texto);
+  --mat-chip-with-avatar-avatar-size: 1.125rem;
+  --mat-chip-container-height: 1.75rem;
+}
+
+.chip.ingreso {
+  --mat-chip-elevated-container-color: var(--ok-fondo);
+  --mat-chip-label-text-color: var(--ok);
+}

@@ -1,0 +1,52 @@
+<section class="inventario">
+  <h2>Inventario</h2>
+
+  <div class="barra">
+    <input
+      type="text"
+      placeholder="Buscar producto por nombre..."
+      [value]="filtro()"
+      (input)="actualizarFiltro($event)"
+    />
+    <p class="total">
+      Valor total del inventario:
+      <strong>{{ valorTotalInventario() | currency: 'ARS' : 'symbol-narrow' : '1.0-0' }}</strong>
+    </p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (producto of productosFiltrados(); track producto.id) {
+        <tr>
+          <td>{{ producto.id }}</td>
+          <td>{{ producto.nombre }}</td>
+          <td>{{ producto.precio | currency: 'ARS' : 'symbol-narrow' : '1.0-0' }}</td>
+          <td [class.sin-stock]="producto.stock === 0">{{ producto.stock }}</td>
+          <td class="acciones">
+            <button
+              class="reducir"
+              (click)="reducirStock(producto.id)"
+              [disabled]="producto.stock === 0"
+            >
+              − Reducir
+            </button>
+            <button class="aumentar" (click)="aumentarStock(producto.id)">+ Aumentar</button>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="5" class="vacio">No hay productos que coincidan con "{{ filtro() }}"</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</section>

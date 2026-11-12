@@ -1,0 +1,20 @@
+<div class="selector" role="group" [attr.aria-label]="'Stock de ' + nombreProducto()">
+  <button
+    mat-icon-button
+    type="button"
+    (click)="cambiar(-1)"
+    [disabled]="cantidad() === 0"
+    [attr.aria-label]="'Quitar una unidad de ' + nombreProducto()"
+  >
+    <mat-icon>remove_circle_outline</mat-icon>
+  </button>
+  <output class="valor">{{ cantidad() }}</output>
+  <button
+    mat-icon-button
+    type="button"
+    (click)="cambiar(1)"
+    [attr.aria-label]="'Agregar una unidad de ' + nombreProducto()"
+  >
+    <mat-icon>add_circle_outline</mat-icon>
+  </button>
+</div>

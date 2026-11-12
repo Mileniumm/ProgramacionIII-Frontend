@@ -1,0 +1,26 @@
+{
+  "id": 2,
+  "descripcion": "Monitor IPS de 24 pulgadas, Full HD, 75 Hz.",
+  "proveedor": "Distribuidora Andes",
+  "ubicacion": "Depósito A · Estante 2",
+  "movimientos": [
+    {
+      "fecha": "2026-10-29T11:15:00",
+      "tipo": "egreso",
+      "cantidad": 2,
+      "motivo": "Venta"
+    },
+    {
+      "fecha": "2026-10-14T16:30:00",
+      "tipo": "egreso",
+      "cantidad": 4,
+      "motivo": "Venta"
+    },
+    {
+      "fecha": "2026-10-01T10:00:00",
+      "tipo": "ingreso",
+      "cantidad": 18,
+      "motivo": "Compra a proveedor"
+    }
+  ]
+}

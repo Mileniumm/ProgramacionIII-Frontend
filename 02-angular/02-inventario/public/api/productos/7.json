@@ -1,0 +1,26 @@
+{
+  "id": 7,
+  "descripcion": "Hub USB-C con HDMI, lector SD y carga de 100 W.",
+  "proveedor": "Distribuidora Andes",
+  "ubicacion": "Depósito A · Estante 4",
+  "movimientos": [
+    {
+      "fecha": "2026-10-29T11:15:00",
+      "tipo": "egreso",
+      "cantidad": 2,
+      "motivo": "Venta"
+    },
+    {
+      "fecha": "2026-10-14T16:30:00",
+      "tipo": "egreso",
+      "cantidad": 4,
+      "motivo": "Venta"
+    },
+    {
+      "fecha": "2026-10-01T10:00:00",
+      "tipo": "ingreso",
+      "cantidad": 14,
+      "motivo": "Compra a proveedor"
+    }
+  ]
+}

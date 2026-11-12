@@ -1,0 +1,34 @@
+.barra {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  gap: 0.75rem;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
+  background: var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
+  box-shadow: var(--mat-sys-level2);
+}
+
+.marca {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: inherit;
+  text-decoration: none;
+}
+
+.subtitulo {
+  opacity: 0.8;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 40rem) {
+  .subtitulo {
+    display: none;
+  }
+}
+
+.contenido {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 2.5rem);
+}

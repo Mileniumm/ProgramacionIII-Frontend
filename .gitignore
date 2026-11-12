@@ -1,0 +1,22 @@
+# Dependencias y builds
+node_modules/
+.angular/
+dist/
+coverage/
+**/bin/
+**/obj/
+
+# Configuración local con datos de conexión (ver el README del TP3)
+03-backend-csharp/01-tp3-api/Tp3prog/appsettings.json
+
+# Editores y sistema
+.vs/
+.idea/
+.vscode/
+*.user
+.DS_Store
+Thumbs.db
+
+# Comprimidos de entregas
+*.zip
+*.rar

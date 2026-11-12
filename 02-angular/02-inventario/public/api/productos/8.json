@@ -1,0 +1,26 @@
+{
+  "id": 8,
+  "descripcion": "Silla ergonómica con soporte lumbar regulable y apoyabrazos 3D.",
+  "proveedor": "Mobiliario Mediterráneo",
+  "ubicacion": "Depósito C",
+  "movimientos": [
+    {
+      "fecha": "2026-10-29T11:15:00",
+      "tipo": "egreso",
+      "cantidad": 2,
+      "motivo": "Venta"
+    },
+    {
+      "fecha": "2026-10-14T16:30:00",
+      "tipo": "egreso",
+      "cantidad": 4,
+      "motivo": "Venta"
+    },
+    {
+      "fecha": "2026-10-01T10:00:00",
+      "tipo": "ingreso",
+      "cantidad": 12,
+      "motivo": "Compra a proveedor"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": 6,
+  "descripcion": "Webcam 1080p con micrófono estéreo y tapa de privacidad.",
+  "proveedor": "Periféricos del Sur",
+  "ubicacion": "Depósito B · Estante 2",
+  "movimientos": [
+    {
+      "fecha": "2026-10-29T11:15:00",
+      "tipo": "egreso",
+      "cantidad": 2,
+      "motivo": "Venta"
+    },
+    {
+      "fecha": "2026-10-14T16:30:00",
+      "tipo": "egreso",
+      "cantidad": 4,
+      "motivo": "Venta"
+    },
+    {
+      "fecha": "2026-10-01T10:00:00",
+      "tipo": "ingreso",
+      "cantidad": 6,
+      "motivo": "Compra a proveedor"
+    }
+  ]
+}

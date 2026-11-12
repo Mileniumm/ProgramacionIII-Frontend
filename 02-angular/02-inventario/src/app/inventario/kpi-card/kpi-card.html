@@ -1,0 +1,11 @@
+<mat-card class="kpi" appearance="outlined" [class.alerta]="tono() === 'alerta'">
+  <mat-card-content class="cuerpo">
+    <span class="icono-wrap" aria-hidden="true">
+      <mat-icon>{{ icono() }}</mat-icon>
+    </span>
+    <div>
+      <h2 class="etiqueta">{{ etiqueta() }}</h2>
+      <p class="valor"><ng-content /></p>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,133 @@
+@host = http://localhost:5175
+# Usá los IDs devueltos al crear cada registro.
+@playerId = 1
+@trainerId = 2
+@studentId = 3
+@teamId = 1
+@courseId = 1
+@activityId = 1
+
+### Crear jugador
+POST {{host}}/Players
+Content-Type: application/json
+
+{"name":"Lionel Perez","age":21,"dni":"40111222","number":10}
+
+### Crear entrenador
+POST {{host}}/Trainers
+Content-Type: application/json
+
+{"name":"Maria Gomez","age":35,"dni":"30123456"}
+
+### Crear estudiante
+POST {{host}}/Students
+Content-Type: application/json
+
+{"name":"Ana Lopez","age":20,"dni":"45123456","file":"A-001"}
+
+### Crear equipo
+POST {{host}}/Teams
+Content-Type: application/json
+
+{"name":"Los Halcones","category":"Primera"}
+
+### Crear curso
+POST {{host}}/Courses
+Content-Type: application/json
+
+{"name":"Programacion III"}
+
+### Crear actividad (type: 0 Class, 1 Exam, 2 Assignment)
+POST {{host}}/Activities
+Content-Type: application/json
+
+{"title":"Practica de API","description":"Crear endpoints CRUD","date":"2026-10-22T10:00:00","type":2}
+
+### Asociar estudiante
+PUT {{host}}/Courses/{{courseId}}/students/{{studentId}}
+
+### Asociar actividad
+PUT {{host}}/Courses/{{courseId}}/activities/{{activityId}}
+
+### Asociar jugador
+PUT {{host}}/Teams/{{teamId}}/players/{{playerId}}
+
+### Asociar entrenador
+PUT {{host}}/Teams/{{teamId}}/trainers/{{trainerId}}
+
+### Consultar equipos con relaciones
+GET {{host}}/Teams
+Accept: application/json
+
+### Consultar curso con relaciones
+GET {{host}}/Courses/{{courseId}}
+Accept: application/json
+
+### Consultar jugadores
+GET {{host}}/Players
+
+### Consultar entrenadores
+GET {{host}}/Trainers
+
+### Consultar estudiantes
+GET {{host}}/Students
+
+### Consultar actividades
+GET {{host}}/Activities
+
+### Actualizar jugador
+PUT {{host}}/Players/{{playerId}}
+Content-Type: application/json
+
+{"name":"Lionel Perez","age":22,"dni":"40111222","number":11}
+
+### Tipo de actividad inválido
+POST {{host}}/Activities
+Content-Type: application/json
+
+{"title":"Actividad invalida","description":"Tipo fuera del enum","type":99}
+
+### Nombre y edad inválidos
+POST {{host}}/Students
+Content-Type: application/json
+
+{"name":"A","age":0,"file":"A-002"}
+
+### ID distinto al de la ruta
+PUT {{host}}/Courses/{{courseId}}
+Content-Type: application/json
+
+{"id":9223372036854775807,"name":"Programacion III"}
+
+### Recurso inexistente
+GET {{host}}/Courses/9223372036854775807
+
+### Quitar estudiante del curso
+DELETE {{host}}/Courses/{{courseId}}/students/{{studentId}}
+
+### Quitar actividad del curso sin borrarla
+DELETE {{host}}/Courses/{{courseId}}/activities/{{activityId}}
+
+### Quitar jugador del equipo
+DELETE {{host}}/Teams/{{teamId}}/players/{{playerId}}
+
+### Quitar entrenador del equipo
+DELETE {{host}}/Teams/{{teamId}}/trainers/{{trainerId}}
+
+### Borrar jugador
+DELETE {{host}}/Players/{{playerId}}
+
+### Borrar entrenador
+DELETE {{host}}/Trainers/{{trainerId}}
+
+### Borrar estudiante
+DELETE {{host}}/Students/{{studentId}}
+
+### Borrar actividad
+DELETE {{host}}/Activities/{{activityId}}
+
+### Borrar equipo
+DELETE {{host}}/Teams/{{teamId}}
+
+### Borrar curso
+DELETE {{host}}/Courses/{{courseId}}

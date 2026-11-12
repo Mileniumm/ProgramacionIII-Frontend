@@ -1,0 +1,26 @@
+{
+  "id": 4,
+  "descripcion": "Mouse inalámbrico de 2,4 GHz, 1600 DPI.",
+  "proveedor": "Periféricos del Sur",
+  "ubicacion": "Depósito B · Estante 1",
+  "movimientos": [
+    {
+      "fecha": "2026-10-29T11:15:00",
+      "tipo": "egreso",
+      "cantidad": 2,
+      "motivo": "Venta"
+    },
+    {
+      "fecha": "2026-10-14T16:30:00",
+      "tipo": "egreso",
+      "cantidad": 4,
+      "motivo": "Venta"
+    },
+    {
+      "fecha": "2026-10-01T10:00:00",
+      "tipo": "ingreso",
+      "cantidad": 31,
+      "motivo": "Compra a proveedor"
+    }
+  ]
+}

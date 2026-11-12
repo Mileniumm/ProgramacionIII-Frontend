@@ -1,0 +1,12 @@
+.selector {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
+}
+
+.valor {
+  min-width: 2.5ch;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}

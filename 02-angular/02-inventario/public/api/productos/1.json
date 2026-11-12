@@ -1,0 +1,26 @@
+{
+  "id": 1,
+  "descripcion": "Notebook de 14 pulgadas, 16 GB de RAM y SSD de 512 GB.",
+  "proveedor": "Distribuidora Andes",
+  "ubicacion": "Depósito A · Estante 1",
+  "movimientos": [
+    {
+      "fecha": "2026-10-29T11:15:00",
+      "tipo": "egreso",
+      "cantidad": 2,
+      "motivo": "Venta"
+    },
+    {
+      "fecha": "2026-10-14T16:30:00",
+      "tipo": "egreso",
+      "cantidad": 4,
+      "motivo": "Venta"
+    },
+    {
+      "fecha": "2026-10-01T10:00:00",
+      "tipo": "ingreso",
+      "cantidad": 11,
+      "motivo": "Compra a proveedor"
+    }
+  ]
+}

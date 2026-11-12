@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario programación III</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main>
+        <header class="header">
+            <h1>Formulario programación III</h1>
+            <p>Gracias por tomarse el tiempo de rellenar este formulario</p>
+        </header>
+
+        <form action="#" method="post" class="form">
+            <section class="form-group">
+                <label for="name">Nombres</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Ingrese su nombre" required>
+            </section>
+
+            <section class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Ingrese su email" required>
+            </section>
+
+            <section class="form-group">
+                <label for="edad">Edad (opcional)</label>
+                <input type="number" id="edad" name="edad" min="10" max="99" class="form-control" placeholder="Edad">
+            </section>
+
+            <section class="form-group">
+                <label for="rol">Selecciona tu estado actual como alumno</label>
+                <select id="rol" name="rol" required>
+                    <option disabled selected value="">Seleccione su estado actual</option>
+                    <option value="promocional">Promocional</option>
+                    <option value="regular">Regular</option>
+                    <option value="libre">Libre</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </section>
+
+            <section class="form-group inline-group">
+                <p>¿Recomendarias estudiar programación a un amigo?</p>
+                <div class="options-container">
+                    <label class="radio-label">
+                        <input name="user-recommend" value="definitely" type="radio" checked>Definitivamente
+                    </label>
+                    <label class="radio-label">
+                        <input name="user-recommend" value="maybe" type="radio">Tal vez
+                    </label>
+                    <label class="radio-label">
+                        <input name="user-recommend" value="not-sure" type="radio">No estoy seguro
+                    </label>
+                </div>
+            </section>
+
+            <section class="form-group">
+                <label for="mostLike">Para ti, ¿Cuál es la mejor forma de aprender programación?</label>
+                <select id="mostLike" name="mostLike" class="form-control" required>
+                    <option disabled selected value="">Selecciona una opción</option>
+                    <option value="ejercicios">Ejercicios</option>
+                    <option value="proyectos">Proyectos Personales</option>
+                    <option value="documentacion">Documentación</option>
+                </select>
+            </section>
+
+            <section class="form-group inline-group">
+                <p>¿Que tecnologías dominas?</p>
+                <div class="options-container grid-tech">
+                    <label class="checkbox-label"><input name="prefer" value="html5" type="checkbox">HTML5</label>
+                    <label class="checkbox-label"><input name="prefer" value="css3" type="checkbox">CSS3</label>
+                    <label class="checkbox-label"><input name="prefer" value="javascript" type="checkbox">Javascript</label>
+                    <label class="checkbox-label"><input name="prefer" value="angular" type="checkbox">Angular</label>
+                    <label class="checkbox-label"><input name="prefer" value="node-js" type="checkbox">Node.js</label>
+                    <label class="checkbox-label"><input name="prefer" value="sql" type="checkbox">SQL</label>
+                    <label class="checkbox-label"><input name="prefer" value="c#" type="checkbox">C#</label>
+                    <label class="checkbox-label"><input name="prefer" value="typescript" type="checkbox">Typescript</label>
+                    <label class="checkbox-label"><input name="prefer" value="java" type="checkbox">Java</label>
+                    <label class="checkbox-label"><input name="prefer" value="python" type="checkbox">Python</label>
+                    <label class="checkbox-label"><input name="prefer" value="react" type="checkbox">React</label>
+                </div>
+            </section>
+
+            <section class="form-group">
+                <label for="comment">Algun comentario o sugerencia?</label>
+                <textarea id="comment" name="comment" placeholder="Escribe tu comentario aquí..." rows="4"></textarea>
+            </section>
+
+            <section class="button-group">
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpiar</button>
+            </section>
+        </form>
+    </main>
+
+</body>
+</html>

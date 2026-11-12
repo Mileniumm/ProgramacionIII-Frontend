@@ -1,0 +1,102 @@
+<a mat-button class="volver" routerLink="/">
+  <mat-icon>arrow_back</mat-icon>
+  Volver al panel
+</a>
+
+@if (producto(); as p) {
+  <header class="cabecera">
+    <p class="categoria">{{ p.categoria }}</p>
+    <h1>{{ p.nombre }}</h1>
+    <p class="datos">
+      <span class="precio">{{ p.precio | currency: 'ARS' : 'symbol-narrow' : '1.0-0' }}</span>
+      <mat-chip class="stock" [class.bajo]="p.cantidad < umbral()" disableRipple>
+        <mat-icon matChipAvatar>{{ p.cantidad < umbral() ? 'warning_amber' : 'check_circle' }}</mat-icon>
+        {{ p.cantidad === 0 ? 'Sin stock' : p.cantidad + ' unidades en stock' }}
+      </mat-chip>
+    </p>
+  </header>
+} @else {
+  <h1>Producto #{{ id() }}</h1>
+}
+
+@switch (detalle.status()) {
+  @case ('loading') {
+    <mat-card appearance="outlined" aria-busy="true">
+      <mat-card-content class="cargando">
+        <p>Cargando ficha del producto…</p>
+        <mat-progress-bar mode="indeterminate" />
+      </mat-card-content>
+    </mat-card>
+  }
+  @case ('error') {
+    <mat-card appearance="outlined" class="error" role="alert">
+      <mat-card-content class="fila-error">
+        <mat-icon aria-hidden="true">error_outline</mat-icon>
+        <p>No se encontró la ficha de este producto.</p>
+        <button mat-flat-button type="button" (click)="detalle.reload()">Reintentar</button>
+      </mat-card-content>
+    </mat-card>
+  }
+  @default {
+    @if (detalle.value(); as d) {
+      <mat-card appearance="outlined" aria-labelledby="titulo-ficha">
+        <mat-card-header>
+          <mat-card-title id="titulo-ficha">Ficha</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <dl class="ficha">
+            <dt><mat-icon aria-hidden="true">notes</mat-icon>Descripción</dt>
+            <dd>{{ d.descripcion }}</dd>
+            <dt><mat-icon aria-hidden="true">local_shipping</mat-icon>Proveedor</dt>
+            <dd>{{ d.proveedor }}</dd>
+            <dt><mat-icon aria-hidden="true">place</mat-icon>Ubicación</dt>
+            <dd>{{ d.ubicacion }}</dd>
+          </dl>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card appearance="outlined" aria-labelledby="titulo-movimientos">
+        <mat-card-header>
+          <mat-card-title id="titulo-movimientos">Últimos movimientos</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="tabla-scroll">
+            <table mat-table [dataSource]="d.movimientos">
+              <ng-container matColumnDef="fecha">
+                <th mat-header-cell *matHeaderCellDef>Fecha</th>
+                <td mat-cell *matCellDef="let m">{{ m.fecha | date: 'dd/MM/yyyy HH:mm' }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="tipo">
+                <th mat-header-cell *matHeaderCellDef>Tipo</th>
+                <td mat-cell *matCellDef="let m">
+                  <mat-chip class="chip" [class.ingreso]="m.tipo === 'ingreso'" disableRipple>
+                    <mat-icon matChipAvatar>
+                      {{ m.tipo === 'ingreso' ? 'arrow_downward' : 'arrow_upward' }}
+                    </mat-icon>
+                    {{ m.tipo === 'ingreso' ? 'Ingreso' : 'Egreso' }}
+                  </mat-chip>
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="motivo">
+                <th mat-header-cell *matHeaderCellDef>Motivo</th>
+                <td mat-cell *matCellDef="let m">{{ m.motivo }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="cantidad">
+                <th mat-header-cell *matHeaderCellDef class="numero">Cantidad</th>
+                <td mat-cell *matCellDef="let m" class="numero">
+                  {{ m.tipo === 'ingreso' ? '+' : '−' }}{{ m.cantidad }}
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+              <tr mat-row *matRowDef="let m; columns: columnas"></tr>
+            </table>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    }
+  }
+}

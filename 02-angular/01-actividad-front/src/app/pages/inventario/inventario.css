@@ -1,0 +1,112 @@
+.inventario {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem 2rem;
+}
+
+.inventario h2 {
+  margin: 0 0 1rem;
+  font-size: 1.6rem;
+}
+
+.barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.barra input {
+  flex: 1;
+  min-width: 240px;
+  max-width: 400px;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+}
+
+.barra input:focus {
+  outline: 2px solid #0d6efd;
+  border-color: #0d6efd;
+}
+
+.total {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.total strong {
+  font-size: 1.3rem;
+  color: #0d6efd;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+th {
+  background: #f1f3f5;
+  font-weight: 600;
+}
+
+tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.sin-stock {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background: #0d6efd;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: #0b5ed7;
+}
+
+.acciones {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button.aumentar {
+  background: #198754;
+}
+
+button.aumentar:hover {
+  background: #157347;
+}
+
+button:disabled {
+  background: #adb5bd;
+  cursor: not-allowed;
+}
+
+.vacio {
+  text-align: center;
+  color: #6c757d;
+  padding: 1.5rem;
+}

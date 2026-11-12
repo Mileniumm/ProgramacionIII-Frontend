@@ -1,0 +1,158 @@
+:host {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.encabezado h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.estado-recurso {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.25rem 0 0;
+  color: var(--texto-suave);
+  font-size: 0.875rem;
+}
+
+.chip-estado {
+  --mat-chip-container-height: 1.5rem;
+  --mat-chip-label-text-size: 0.75rem;
+  font-family: monospace;
+}
+
+.cargando p {
+  margin: 0.5rem 0 1rem;
+}
+
+.fila-error {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.fila-error p {
+  margin: 0;
+  margin-right: auto;
+}
+
+mat-card {
+  --mat-card-outlined-container-color: var(--superficie);
+}
+
+mat-card.alerta,
+mat-card.error {
+  --mat-card-outlined-container-color: var(--alerta-fondo);
+  --mat-card-outlined-outline-color: var(--alerta);
+  color: var(--alerta-texto);
+}
+
+/* con auto-fit las tarjetas se acomodan solas */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+
+.alerta h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.0625rem;
+}
+
+.lista-alerta {
+  margin: 0;
+  padding-left: 2.25rem;
+}
+
+.lista-alerta a {
+  color: inherit;
+  font-weight: 600;
+}
+
+.tabla-encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.tabla-encabezado h2 {
+  margin: 0;
+}
+
+.umbral {
+  width: 13rem;
+}
+
+table {
+  width: 100%;
+  background: transparent;
+}
+
+th.mat-mdc-header-cell {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+td.mat-mdc-cell,
+th.mat-mdc-header-cell,
+td.mat-mdc-footer-cell {
+  white-space: nowrap;
+}
+
+.mat-mdc-cell.numero,
+.mat-mdc-header-cell.numero,
+.mat-mdc-footer-cell.numero {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.nombre {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nombre:hover {
+  text-decoration: underline;
+}
+
+tr.bajo {
+  background: var(--alerta-fondo);
+  color: var(--alerta-texto);
+}
+
+tr.bajo .nombre {
+  color: inherit;
+}
+
+td.mat-mdc-footer-cell {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.sin-datos td {
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--texto-suave);
+}
+
+.eliminar:hover:not(:disabled) {
+  color: var(--alerta);
+}
