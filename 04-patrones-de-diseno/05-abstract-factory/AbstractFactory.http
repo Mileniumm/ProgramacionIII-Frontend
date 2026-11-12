@@ -1,0 +1,19 @@
+@host = http://localhost:5180
+
+### Listar usuarios (los nombres dicen de qué familia vienen)
+GET {{host}}/Users
+
+### Buscar por id
+GET {{host}}/Users/1
+
+### Crear un usuario
+POST {{host}}/Users
+Content-Type: application/json
+
+{
+  "name": "Milena",
+  "email": "milena@ejemplo.com"
+}
+
+### Eliminar
+DELETE {{host}}/Users/2

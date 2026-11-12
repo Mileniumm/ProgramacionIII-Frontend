@@ -1,0 +1,13 @@
+{
+  "name": "factory-method",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Factory Method en TypeScript: exportador de informes académicos",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/main.js"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.2"
+  }
+}
