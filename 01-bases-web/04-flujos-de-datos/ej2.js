@@ -27,7 +27,7 @@ do {
             break;
         }
         case 2: {
-            let  = parseInt(prompt("Ingrese el primer valor (debe ser el mayor):"));
+            let min = parseInt(prompt("Ingrese el primer valor (debe ser el mayor):"));
             let sust = parseInt(prompt("Ingrese el segundo valor (debe ser el menor):"));
             if (isNaN(min) || isNaN(sust)) {
                 alert("Error: Uno o ambos valores no son números válidos.");
@@ -39,8 +39,7 @@ do {
             break;
         }
         case 3: {
-           
-    false;
+            calculadora = false;
             alert("¡Gracias por usar la calculadora! byebye");
             break;
         }

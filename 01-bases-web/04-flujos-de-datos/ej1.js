@@ -8,11 +8,11 @@ if (!nombre || nombre.trim() === "") {
     alert(`Hola ${nombre}`);
     let edad = parseInt(prompt("Ingrese su edad:"));
     
-    if (isNaN(edadUsuario)) {
+    if (isNaN(edad)) {
         alert("Error: La edad ingresada no es un número válido.");
     } else if (edad >= 18) {
         alert(`Bienvenido ${nombre} - FIN`);
-    } else if (edad < 16) {
+    } else if (edad <= 16) {
         alert(`Lo siento, no puede ingresar, es menor de edad - FIN`);
     } else {
 
