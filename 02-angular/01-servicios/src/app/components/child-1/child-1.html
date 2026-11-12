@@ -1,0 +1,16 @@
+<section class="tarjeta">
+  <h2>child-1</h2>
+  <p class="rol">Muestra los datos del auto</p>
+  <p class="instancia">Instancia del servicio: #{{ autoService.idInstancia }}</p>
+
+  <dl>
+    <dt>Marca</dt>
+    <dd>{{ autoService.datos().marca }}</dd>
+    <dt>Modelo</dt>
+    <dd>{{ autoService.datos().modelo }}</dd>
+    <dt>Año</dt>
+    <dd>{{ autoService.datos().anio }}</dd>
+    <dt>Kilómetros</dt>
+    <dd class="km">{{ autoService.datos().km }} km</dd>
+  </dl>
+</section>

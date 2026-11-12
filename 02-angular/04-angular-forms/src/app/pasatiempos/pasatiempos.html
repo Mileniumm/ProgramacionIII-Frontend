@@ -1,0 +1,20 @@
+<form [formGroup]="pasatiemposForm" (ngSubmit)="onSubmit()">
+  <div formArrayName="pasatiempos" class="lista">
+    @for (pasatiempo of pasatiempos.controls; track $index; let i = $index) {
+      <div class="fila">
+        <label for="pasatiempo-{{ i }}">Pasatiempo {{ i + 1 }}</label>
+        <input id="pasatiempo-{{ i }}" type="text" formControlName="{{ i }}" />
+        @if (pasatiempos.length > 1) {
+          <button type="button" class="quitar" (click)="quitarPasatiempo(i)">Quitar</button>
+        }
+      </div>
+    }
+  </div>
+
+  <div class="acciones">
+    <button type="button" class="secundario" (click)="agregarPasatiempo()">+ Agregar pasatiempo</button>
+    <button type="submit">Enviar</button>
+  </div>
+</form>
+
+<pre>{{ pasatiemposForm.value | json }}</pre>

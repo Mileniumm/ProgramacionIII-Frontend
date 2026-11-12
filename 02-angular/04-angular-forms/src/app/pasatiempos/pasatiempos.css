@@ -1,0 +1,57 @@
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fila {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  align-items: center;
+  gap: 8px;
+}
+
+label {
+  color: #5b6964;
+}
+
+input {
+  padding: 8px 10px;
+  border: 1px solid #d6e0db;
+  border-radius: 8px;
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+button {
+  padding: 8px 14px;
+  border: 1px solid #46695f;
+  border-radius: 8px;
+  background-color: #46695f;
+  color: #ffffff;
+}
+
+.secundario,
+.quitar {
+  background-color: transparent;
+  color: #46695f;
+}
+
+.quitar {
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+pre {
+  margin: 0;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #1c2623;
+  color: #dde8e3;
+  overflow-x: auto;
+}

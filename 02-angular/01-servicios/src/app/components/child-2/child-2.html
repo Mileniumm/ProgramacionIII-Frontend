@@ -1,0 +1,17 @@
+<section class="tarjeta">
+  <h2>child-2</h2>
+  <p class="rol">Cambia los kilómetros</p>
+  <p class="instancia">Instancia del servicio: #{{ autoService.idInstancia }}</p>
+
+  <label for="km">Kilómetros nuevos</label>
+  <input id="km" type="number" min="0" placeholder="Ej: 20000" #km />
+
+  <div class="acciones">
+    <button type="button" (click)="guardar(km.value)">Guardar</button>
+    <button type="button" class="secundario" (click)="autoService.sumarKilometros(1000)">+1000 km</button>
+  </div>
+
+  @if (error()) {
+    <p class="error">{{ error() }}</p>
+  }
+</section>

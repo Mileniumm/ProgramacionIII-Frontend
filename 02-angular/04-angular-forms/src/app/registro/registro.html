@@ -1,0 +1,36 @@
+<form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+  <label for="nombre">Nombre</label>
+  <input id="nombre" type="text" formControlName="nombre" />
+  @if (registroForm.controls.nombre.invalid && registroForm.controls.nombre.touched) {
+    <p class="error">El nombre es obligatorio</p>
+  }
+
+  <label for="email">Email</label>
+  <input id="email" type="email" formControlName="email" />
+  @if (registroForm.controls.email.hasError('required') && registroForm.controls.email.touched) {
+    <p class="error">El email es obligatorio</p>
+  }
+  @if (registroForm.controls.email.hasError('email')) {
+    <p class="error">El email no tiene un formato válido</p>
+  }
+
+  <fieldset formGroupName="direccion">
+    <legend>Dirección</legend>
+
+    <label for="calle">Calle</label>
+    <input id="calle" type="text" formControlName="calle" />
+
+    <label for="ciudad">Ciudad</label>
+    <input id="ciudad" type="text" formControlName="ciudad" />
+  </fieldset>
+
+  <div class="acciones">
+    <button type="button" class="secundario" (click)="cargarDireccionDePrueba()">
+      Cargar Dirección de Prueba
+    </button>
+    <button type="submit" [disabled]="registroForm.invalid">Enviar</button>
+  </div>
+</form>
+
+<p class="estado">Estado del formulario: <strong>{{ registroForm.status }}</strong></p>
+<pre>{{ registroForm.value | json }}</pre>

@@ -1,0 +1,78 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  margin-top: 8px;
+  color: #5b6964;
+}
+
+input {
+  padding: 8px 10px;
+  border: 1px solid #d6e0db;
+  border-radius: 8px;
+}
+
+input.ng-invalid.ng-touched {
+  border-color: #c0392b;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+  border: 1px dashed #90c997;
+  border-radius: 10px;
+}
+
+legend {
+  padding: 0 6px;
+  color: #35504a;
+}
+
+.error {
+  margin: 0;
+  color: #c0392b;
+  font-size: 14px;
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+button {
+  padding: 8px 14px;
+  border: 1px solid #46695f;
+  border-radius: 8px;
+  background-color: #46695f;
+  color: #ffffff;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.secundario {
+  background-color: transparent;
+  color: #46695f;
+}
+
+.estado {
+  margin-bottom: 4px;
+}
+
+pre {
+  margin: 0;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #1c2623;
+  color: #dde8e3;
+  overflow-x: auto;
+}
