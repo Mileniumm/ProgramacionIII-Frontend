@@ -1,15 +1,11 @@
-# Programación III
+# Programación III - Previgliano Milena Zoe
 
 Proyectos y ejercicios de Programación III, de la Tecnicatura Superior en Desarrollo de Software de Quality ISAD (2026).
 
-Están en el orden de la cursada: primero las bases de la web, después Angular, el backend en C# y por último los patrones de diseño.
-
 ## Índice
 
-### 1. Bases de la web: HTML, CSS y JavaScript
+### 1. HTML, CSS y JavaScript
 
-| Proyecto | Qué es | Temas |
-| --- | --- | --- |
 | [Página de negocio](01-bases-web/01-pagina-de-negocio) | Sitio de Fresia, un local de comida saludable en Güemes, Córdoba | HTML semántico, Flexbox, Grid, responsive, audio y video |
 | [Formulario de encuesta](01-bases-web/02-formulario-de-encuesta) | Encuesta para alumnos de la materia | Formularios, tipos de input, validación nativa |
 | [Control de flujos](01-bases-web/03-control-de-flujos) | Ingreso con control de edad y calculadora con menú | `if`, `switch`, `do...while`, `prompt` y `alert` |
@@ -19,23 +15,15 @@ Están en el orden de la cursada: primero las bases de la web, después Angular,
 
 ### 2. Angular
 
-| Proyecto | Qué es | Temas |
-| --- | --- | --- |
 | [Servicios](02-angular/01-servicios) | Dos componentes que comparten los datos de un auto a través de un servicio | `@Injectable`, `inject()`, singleton, interfaces, signals |
 | [Actividad front](02-angular/02-actividad-front) | Dashboard con header y footer, más un inventario. Hecho en grupo | Componentes, `signal`, `computed`, `effect`, pipe `currency` |
 | [Inventario](02-angular/03-inventario) | Panel de inventario con detalle de cada producto | Signals, `httpResource`, `rxResource`, rutas lazy, `input()` y `output()` |
 | [Angular Forms](02-angular/04-angular-forms) | Registro con grupo anidado y lista dinámica de pasatiempos | `FormBuilder`, `Validators`, `patchValue`, `FormArray` |
 
-### 3. Backend en C#
-
-| Proyecto | Qué es | Temas |
-| --- | --- | --- |
+### 3. C#
 | [TP3: API REST](03-backend-csharp/01-tp3-api) | API de jugadores, equipos, entrenadores, estudiantes, cursos y actividades | ASP.NET Core, Entity Framework Core, MySQL, DAO, DTO, tests |
 
 ### 4. Patrones de diseño
-
-| Proyecto | Qué es | Lenguaje |
-| --- | --- | --- |
 | [Singleton](04-patrones-de-diseno/01-singleton) | Configuración compartida entre dos módulos | C# |
 | [Builder](04-patrones-de-diseno/02-builder) | Pedidos de una tienda armados paso a paso | C# |
 | [Prototype](04-patrones-de-diseno/03-prototype) | Personajes de un videojuego que se clonan | C# |
@@ -81,13 +69,3 @@ EjerciciosProgramacionIII/
     ├── 04-factory-method/
     └── 05-abstract-factory/
 ```
-
-## Para sumar un proyecto nuevo
-
-1. Ponelo en la carpeta del bloque que corresponde, con el número que sigue. Por ejemplo: `02-angular/05-routing`.
-2. Agregale un `README.md` corto: qué es, qué temas practicaste y cómo se corre.
-3. Sumá una fila al índice de este README.
-
----
-
-Milena Previgliano
